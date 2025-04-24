@@ -1,14 +1,7 @@
-"""
-CS 4391 Homework 3 Programming
-Implement sift_matching() function in this python script
-SIFT feature matching
-"""
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-#TODO: implement this function
 # input: des1 is a matrix of SIFT descriptors with shape [m, 128]
 # input: des2 is a matrix of SIFT descriptors with shape [n, 128]
 # output: index is an array with lenth m, where the ith element indicates the matched descriptor from des2 for the ith descriptor in des1
@@ -54,7 +47,7 @@ if __name__ == '__main__':
     #TODO: implement this function
     index = sift_matching(descriptors_1, descriptors_2)
     
-    # visualization for your debugging
+    # visualization for debugging
     fig = plt.figure()
 
     # show the concatenated image
