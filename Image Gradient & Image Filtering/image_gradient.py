@@ -1,7 +1,3 @@
-"""
-CS 4391 Homework 1 Programming
-"""
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -36,7 +32,7 @@ if __name__ == '__main__':
             gradient_y[x-1][y-1] = (gray_image_with_padding[x+1][y] - gray_image_with_padding[x-1][y]) / 2
 
     
-    # show result with matplotlib (no need to change code below)
+    # show result with matplotlib 
     fig = plt.figure()
     ax = fig.add_subplot(1, 3, 1)
     plt.imshow(gray_image, cmap = 'gray')
