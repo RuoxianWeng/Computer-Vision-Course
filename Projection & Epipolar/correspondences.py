@@ -1,14 +1,8 @@
-"""
-CS 4391 Homework 4 Programming
-Find correspondences of pixels using camera poses
-"""
-
 import cv2
 import scipy.io
 import numpy as np
 import matplotlib.pyplot as plt
 
-# first finish the backproject function in problem 1
 from backproject import backproject
 
    
@@ -62,7 +56,7 @@ if __name__ == '__main__':
     index = np.array([[257, 142], [363, 165], [286, 276]], dtype=np.int32)
     print(index, index.shape)
     
-    # TODO finish the following steps to find the correspondences of the 3 pixels on image 2
+    # find the correspondences of the 3 pixels on image 2
     
     # Step 1: get the coordinates of 3D points for the 3 pixels from image 1
     # this is in camera 1 view
