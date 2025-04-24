@@ -17,17 +17,9 @@ def fc_forward(x, w, b):
     - out: output, of shape (N, Dout)
     - cache: (x, w, b)
     """
-    out = None
-    ###########################################################################
-    # TODO: Implement the forward pass. Store the result in out.              #
-    ###########################################################################
-
     out = np.dot(x, w) + b
-
-    ###########################################################################
-    #                             END OF YOUR CODE                            #
-    ###########################################################################
     cache = (x, w, b)
+    
     return out, cache
 
 
@@ -48,18 +40,11 @@ def fc_backward(grad_out, cache):
     - grad_b: A numpy array of shape (Dout,) of gradient with respect to b
     """
     x, w, b = cache
-    grad_x, grad_w, grad_b = None, None, None
-    ###########################################################################
-    # TODO: Implement the backward pass for the fully-connected layer         #
-    ###########################################################################
 
     grad_x = np.dot(grad_out, w.T)
     grad_w = np.dot(x.T, grad_out)
     grad_b = np.dot(np.ones(grad_out.shape[0]).T, grad_out)
 
-    ###########################################################################
-    #                             END OF YOUR CODE                            #
-    ###########################################################################
     return grad_x, grad_w, grad_b
 
 
@@ -74,17 +59,10 @@ def relu_forward(x):
     - out: A numpy array of outputs, of the same shape as x
     - cache: x
     """
-    out = None
-    ###########################################################################
-    # TODO: Implement the ReLU forward pass.                                  #
-    ###########################################################################
 
     out = np.maximum(0, x)
-
-    ###########################################################################
-    #                             END OF YOUR CODE                            #
-    ###########################################################################
     cache = x
+    
     return out, cache
 
 
@@ -100,16 +78,10 @@ def relu_backward(grad_out, cache):
     - grad_x: Gradient with respect to x
     """
     grad_x, x = None, cache
-    ###########################################################################
-    # TODO: Implement the ReLU backward pass.                                 #
-    ###########################################################################
 
     # if x >= 0, return grad_out, else, return 0
     grad_x = (x >= 0) * grad_out
 
-    ###########################################################################
-    #                             END OF YOUR CODE                            #
-    ###########################################################################
     return grad_x
 
 
@@ -151,9 +123,6 @@ def softmax_loss(x, y):
       with respect to x
     """
     loss, grad_x = None, None
-    ###########################################################################
-    # TODO: Implement softmax loss                                            #
-    ###########################################################################
 
     N = x.shape[0]
 
@@ -171,9 +140,6 @@ def softmax_loss(x, y):
     grad_x[range(N), y] -= 1
     grad_x /= N
 
-    ###########################################################################
-    #                             END OF YOUR CODE                            #
-    ###########################################################################
     return loss, grad_x
 
 
@@ -191,15 +157,8 @@ def l2_regularization(w, reg):
 
     Returns:
     """
-    loss, grad_w = None, None
-    ###########################################################################
-    # TODO: Implement L2 regularization.                                      #
-    ###########################################################################
 
     loss = (reg / 2) * np.sum(w*w)
     grad_w = reg * w
 
-    ###########################################################################
-    #                             END OF YOUR CODE                            #
-    ###########################################################################
     return loss, grad_w
