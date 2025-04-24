@@ -36,10 +36,10 @@ if __name__ == '__main__':
     rgb_filename = 'cracker_box.jpg'
     im = cv2.imread(rgb_filename)
     
-    # your implementation of the edge detector
+    # implementation of the edge detector
     edge_mask = edge_detection(im)
         
-    # visualization for your debugging
+    # visualization for debugging
     fig = plt.figure()
         
     # show RGB image
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     plt.imshow(im[:, :, (2, 1, 0)])
     ax.set_title('RGB image')
         
-    # show your edge image
+    # show edge image
     ax = fig.add_subplot(1, 2, 2)
     plt.imshow(im[:, :, (2, 1, 0)])
     index = np.where(edge_mask > 0)
