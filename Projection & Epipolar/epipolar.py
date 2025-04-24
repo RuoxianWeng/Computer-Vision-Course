@@ -1,16 +1,8 @@
-"""
-CS4391 Homework 4 Programming
-Epipolar Geometry
-"""
-
 import cv2
 import scipy.io
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-#TODO
-# use your backproject function in homework 4, problem 1
 from backproject import backproject
     
     
@@ -43,8 +35,7 @@ def read_data(file_index):
     return im, depth, mask, meta
     
     
-#TODO: implement this function to compute the fundamental matrix
-# Follow lecture 14, the 8-point algorithm
+# compute the fundamental matrix
 # xy1 and xy2 are with shape (n, 2)
 def compute_fundamental_matrix(xy1, xy2):
 
@@ -109,9 +100,7 @@ if __name__ == '__main__':
     y1 = np.min(boundary[0])
     y2 = np.max(boundary[0])
     
-    # sample n pixels (x, y) inside the bounding box of the cracker box
-    # due to the randomness here, you may not get the same figure as mine
-    # this is fine as long as your result is correct    
+    # sample n pixels (x, y) inside the bounding box of the cracker box 
     n = 10
     height = im1.shape[0]
     width = im1.shape[1]
@@ -144,8 +133,7 @@ if __name__ == '__main__':
     RT2 = meta2['camera_pose']
     print(RT1.shape, RT2.shape)
     
-    #TODO
-    # use your code from homework 4, problem 2 to find the correspondences of xy1
+    # find the correspondences of xy1
     # let the corresponding pixels on image 2 be xy2 with shape (n, 2)
 
     # get 3d camera 1 coordinates for the set of pixels in image 1
@@ -174,11 +162,9 @@ if __name__ == '__main__':
         homo_coordinate = np.dot(intrinsic_matrix, index_3d_im2[i])
         xy2[i] = [homo_coordinate[0]/homo_coordinate[2], homo_coordinate[1]/homo_coordinate[2]]
 
-    #TODO
-    # implement this function: compute fundamental matrix
     F = compute_fundamental_matrix(xy1, xy2)
     
-    # visualization for your debugging
+    # visualization for debugging
     fig = plt.figure()
         
     # show RGB image 1 and sampled pixels
