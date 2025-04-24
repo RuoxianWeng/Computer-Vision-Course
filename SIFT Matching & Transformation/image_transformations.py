@@ -1,8 +1,3 @@
-"""
-CS 4391 Homework 3 Programming
-Transform images
-"""
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,7 +5,6 @@ import matplotlib.pyplot as plt
 
 # transform the input image im (H, W, 3) according to the 2D transformation T (3x3 matrix)
 # the output is the transformed image with the same shape (H, W, 3)
-#TODO: implementation this function
 def transform(im, T):
     
     height, width, _ = im.shape
@@ -34,7 +28,6 @@ def transform(im, T):
 
 
 # main function
-# notice you cannot run this main function until you implement the above transform() function 
 if __name__ == '__main__':
 
     # load the image in data
