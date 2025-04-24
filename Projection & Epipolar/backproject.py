@@ -1,8 +1,3 @@
-"""
-CS 4391 Homework 4 Programming
-Backprojection
-"""
-
 import cv2
 import scipy.io
 import numpy as np
@@ -13,7 +8,6 @@ import matplotlib.pyplot as plt
 # input: depth with shape (H, W)
 # input: intrinsic_matrix, a 3x3 matrix
 # output: a point cloud, pcloud with shape (H, W, 3)
-#TODO: implement this function
 def backproject(depth, intrinsic_matrix):
 
     height, width = depth.shape
@@ -97,9 +91,6 @@ if __name__ == '__main__':
     plt.imshow(mask)
     ax.set_title('segmentation mask')
         
-    # up to now, suppose you get the points box as pbox
-    # then you can use the following code to visualize the points in pbox
-    # You shall see the figure in the homework assignment
     ax = fig.add_subplot(2, 2, 4, projection='3d')
     ax.scatter(pbox[:, 0], pbox[:, 1], pbox[:, 2], marker='.', color='r')
     ax.set_xlabel('X')
