@@ -1,7 +1,3 @@
-"""
-CS 4391 Homework 1 Programming
-"""
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
