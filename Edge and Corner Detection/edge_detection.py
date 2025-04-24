@@ -1,18 +1,9 @@
-"""
-CS 4391 Homework 2 Programming
-Implement the edge_detection() function in this python script
-Edge Detection
-"""
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-#TODO: implement this function
 # input: im is an RGB image with shape [height, width, 3]
 # output: edge_mask with shape [height, width] with valuse 0 and 1, where 1s indicate edge pixels of the input image
-# You can use opencv functions and numpy functions
 def edge_detection(im):
 
     # step 0: convert RGB to gray-scale image
