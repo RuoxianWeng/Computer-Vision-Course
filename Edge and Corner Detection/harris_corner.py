@@ -57,7 +57,7 @@ def harris_corner(im):
     R = determinant - k * (trace * trace)
 
     # step 6: thresholding
-    # up to now, you shall get a R score matrix with shape [height, width]
+    # shall get a R score matrix with shape [height, width]
     threshold = 0.01 * R.max()
     R[R < threshold] = 0
     
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     rgb_filename = 'cracker_box.jpg'
     im = cv2.imread(rgb_filename)
     
-    # your implementation of the harris corner detector
+    # implementation of the harris corner detector
     corner_mask = harris_corner(im)
     
     # opencv harris corner
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     dst = cv2.cornerHarris(gray, 2, 3, 0.04)
     opencv_mask = dst > 0.01 * dst.max()
         
-    # visualization for your debugging
+    # visualization for debugging
     fig = plt.figure()
         
     # show RGB image
