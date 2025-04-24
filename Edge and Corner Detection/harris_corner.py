@@ -1,15 +1,7 @@
-"""
-CS 4391 Homework 2 Programming
-Implement the harris_corner() function and the non_maximum_suppression() function in this python script
-Harris corner detector
-"""
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-#TODO: implement this function
 # input: R is a Harris corner score matrix with shape [height, width]
 # output: mask with shape [height, width] with valuse 0 and 1, where 1s indicate corners of the input image 
 # idea: for each pixel, check its 8 neighborhoods in the image. If the pixel is the maximum compared to these
@@ -34,11 +26,8 @@ def non_maximum_suppression(R):
 
     return mask
 
-
-#TODO: implement this function
 # input: im is an RGB image with shape [height, width, 3]
 # output: corner_mask with shape [height, width] with valuse 0 and 1, where 1s indicate corners of the input image
-# You can use opencv functions and numpy functions
 def harris_corner(im):
 
     # step 0: convert RGB to gray-scale image
@@ -73,7 +62,6 @@ def harris_corner(im):
     R[R < threshold] = 0
     
     # step 7: non-maximum suppression
-    #TODO implement the non_maximum_suppression function above
     corner_mask = non_maximum_suppression(R)
 
     return corner_mask
