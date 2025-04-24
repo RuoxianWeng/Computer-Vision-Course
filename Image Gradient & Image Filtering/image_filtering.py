@@ -21,7 +21,7 @@ if __name__ == '__main__':
     gray_image = np.array(gray_image, dtype=float)
 
 
-    # Step 3: define the filter kernel as described in the homework description as a numpy array
+    # Step 3: define the filter kernel as a numpy array
     kernel = np.array([[-1, 0, 1], 
                        [-2, 0, 2],
                        [-1, 0, 1]])
@@ -43,7 +43,7 @@ if __name__ == '__main__':
             output[i][j] = sum
 
 
-    # show result with matplotlib (no need to change code below)
+    # show result with matplotlib
     fig = plt.figure()
     ax = fig.add_subplot(1, 2, 1)
     plt.imshow(gray_image, cmap = 'gray')
